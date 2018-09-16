@@ -25,6 +25,7 @@ COPY config ./config
 COPY lib ./lib
 COPY priv ./priv
 COPY web ./web
+COPY test ./test
 COPY vm.args .
 
 RUN mix release --env=prod
@@ -37,11 +38,10 @@ RUN APP_NAME="myapp" && \
 # ----------------------------------- #
 # release                             #
 # ----------------------------------- #
-#FROM elixir:1.7.3-alpine
-FROM elixir:1.7.3
+FROM elixir:1.7.3-alpine
 WORKDIR /app
 EXPOSE 8000
-#RUN apk add --no-cache bash
+RUN apk add --no-cache bash
 
 ENV DEBIAN_FRONTEND=noninteractive
 
