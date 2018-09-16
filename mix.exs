@@ -33,7 +33,6 @@ defmodule Myapp.Mixfile do
   # Type `mix help deps` for examples and options.
   defp deps do
     [
-      {:mix_docker, "~> 0.5.0"},
       {:distillery, "~> 1.0"},
       {:phoenix, "~> 1.3.3"},
       {:phoenix_pubsub, "~> 1.0"},
