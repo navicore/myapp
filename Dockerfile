@@ -25,7 +25,6 @@ COPY config ./config
 COPY lib ./lib
 COPY priv ./priv
 COPY web ./web
-COPY test ./test
 COPY vm.args .
 
 RUN mix release --env=prod
