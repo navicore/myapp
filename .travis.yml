@@ -1,15 +1,18 @@
 sudo: required
 services:
   - docker
+
+# declaring elixir but mix is no longer used outside the first part of the multistage dockerfile
+
 language: elixir
+
 elixir:
   - 1.7.3
 otp_release:
   - 21.0.9
-# env:
-#   - MIX_ENV=test
+
 script:
-  - mix do docker.build, docker.release
+  - docker build -t myapp:release .
 
 after_success:
   - if [ "$TRAVIS_BRANCH" == "master" ]; then
