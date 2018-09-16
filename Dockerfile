@@ -39,7 +39,8 @@ RUN APP_NAME="myapp" && \
 # release                             #
 # ----------------------------------- #
 #FROM elixir:1.7.3-alpine # gives long name error
-FROM elixir:1.7.3-slim
+#FROM elixir:1.7.3-slim # gives long name error
+FROM elixir:1.7.3
 WORKDIR /app
 EXPOSE 8000
 #RUN apk add --no-cache bash
