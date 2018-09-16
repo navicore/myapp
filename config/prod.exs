@@ -20,3 +20,7 @@ config :myapp, Myapp.Repo,
   database: "${DB_NAME}",
   pool_size: 20
 
+config :peerage, via: Peerage.Via.Dns,
+  dns_name: "myapp-service-headless.default.svc.cluster.local",
+  app_name: "myapp",
+  interval: 5

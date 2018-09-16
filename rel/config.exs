@@ -50,5 +50,6 @@ release :myapp do
   set applications: [
     :runtime_tools
   ]
+  set vm_args: "./vm.args"
 end
 
