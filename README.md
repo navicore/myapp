@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.org/navicore/myapp.svg?branch=master)](https://travis-ci.org/navicore/myapp)
 # Myapp
 
 To start your Phoenix app:
