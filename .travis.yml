@@ -10,15 +10,14 @@ otp_release:
   - 21.0.9
 
 script:
-  - mix do deps.get, compile
-  - docker build -t myapp:release .
+  - mix do deps.get, compile;
+    docker build -t "navicore/myapp:0.1.$TRAVIS_BUILD_NUMBER" .;
 
 after_success:
   - if [ "$TRAVIS_BRANCH" == "master" ]; then
-    docker login -u "$DOCKER_USERNAME" -p "$DOCKER_PASSWORD";
-    docker tag "myapp:release" "navicore/myapp:latest";
-    docker push "navicore/myapp:latest";
-    docker tag "myapp:release" "navicore/myapp:0.1.$TRAVIS_BUILD_NUMBER";
-    docker push "navicore/myapp:0.1.$TRAVIS_BUILD_NUMBER";
+      docker login -u "$DOCKER_USERNAME" -p "$DOCKER_PASSWORD";
+      docker push "navicore/myapp:0.1.$TRAVIS_BUILD_NUMBER";
+      docker tag "navicore/myapp:0.1.$TRAVIS_BUILD_NUMBER" "navicore/myapp:latest";
+      docker push "navicore/myapp:latest";
     fi
 
