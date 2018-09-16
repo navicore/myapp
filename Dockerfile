@@ -1,3 +1,6 @@
+# ----------------------------------- #
+# build                               #
+# ----------------------------------- #
 FROM elixir:1.7.3 AS buildstep
 WORKDIR /opt/app
 
@@ -30,8 +33,10 @@ RUN APP_NAME="myapp" && \
     mkdir /export && \
     cp "$RELEASE_DIR/$APP_NAME.tar.gz" /export/
 
-# Dockerfile.release
-FROM elixir:1.7.3
+# ----------------------------------- #
+# release                             #
+# ----------------------------------- #
+FROM elixir:1.7.3-alpine
 WORKDIR /app
 EXPOSE 8000
 
