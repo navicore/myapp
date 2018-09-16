@@ -1,2 +1,2 @@
--sname myapp@${MY_POD_IP}
+-name myapp@${MY_POD_IP}
 -setcookie mymagiccookie

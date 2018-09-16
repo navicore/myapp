@@ -20,8 +20,7 @@ defmodule Myapp.Mixfile do
   def application do
     [
       mod: {Myapp, []},
-      extra_applications: [:logger],
-      applications: [:peerage]
+      extra_applications: [:logger,:peerage]
     ]
   end
 
