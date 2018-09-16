@@ -10,3 +10,13 @@ env:
   - MIX_ENV=test
 script:
   - mix do docker.build, docker.release
+
+after_success:
+  - if [ "$TRAVIS_BRANCH" == "master" ]; then
+    docker login -u "$DOCKER_USERNAME" -p "$DOCKER_PASSWORD";
+    docker tag "myapp:release" "navicore/myapp:latest";
+    docker push "navicore/myapp:latest";
+    docker tag "myapp:release" "navicore/myapp:0.1.$TRAVIS_BUILD_NUMBER";
+    docker push "navicore/myapp:0.1.$TRAVIS_BUILD_NUMBER";
+    fi
+
