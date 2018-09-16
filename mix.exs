@@ -34,7 +34,7 @@ defmodule Myapp.Mixfile do
   # Type `mix help deps` for examples and options.
   defp deps do
     [
-      {:peerage, "~> 1.0.2"},
+      {:peerage, "~> 1.0.3"},
       {:distillery, "~> 1.0"},
       {:phoenix, "~> 1.3.3"},
       {:phoenix_pubsub, "~> 1.0"},

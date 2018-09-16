@@ -38,10 +38,11 @@ RUN APP_NAME="myapp" && \
 # ----------------------------------- #
 # release                             #
 # ----------------------------------- #
-FROM elixir:1.7.3-alpine
+#FROM elixir:1.7.3-alpine # gives long name error
+FROM elixir:1.7.3-slim
 WORKDIR /app
 EXPOSE 8000
-RUN apk add --no-cache bash
+#RUN apk add --no-cache bash
 ENV DEBIAN_FRONTEND=noninteractive
 
 ENV PORT=8000 MIX_ENV=prod REPLACE_OS_VARS=true SHELL=/bin/bash
