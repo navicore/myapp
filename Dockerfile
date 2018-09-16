@@ -20,11 +20,13 @@ RUN mix deps.get
 COPY config ./config
 RUN mix deps.compile
 
+# ugh, can't do with one line?
 COPY rel ./rel
 COPY config ./config
 COPY lib ./lib
 COPY priv ./priv
 COPY web ./web
+COPY vm.args .
 
 RUN mix release --env=prod
 
